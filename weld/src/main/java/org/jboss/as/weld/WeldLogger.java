@@ -106,7 +106,7 @@ public interface WeldLogger extends BasicLogger {
     void beansXmlValidationError(URL file, int line , String message);
 
     @LogMessage(level = Logger.Level.WARN)
-    @Message(value = "Deployment %s contains CDI annotations but no bean archive was not found. (No beans.xml nor class with bean defining annotations)", id = 16012)
+    @Message(value = "Deployment %s contains CDI annotations but no bean archive was found (no beans.xml or class with bean defining annotations).", id = 16012)
     void cdiAnnotationsButNotBeanArchive(DeploymentUnit deploymentUnit);
 
     @LogMessage(level = Logger.Level.ERROR)
@@ -132,8 +132,4 @@ public interface WeldLogger extends BasicLogger {
     @LogMessage(level = Logger.Level.DEBUG)
     @Message(value = "Discovered %s", id = Message.NONE)
     void beanArchiveDiscovered(BeanDeploymentArchive bda);
-
-    @LogMessage(level = Logger.Level.DEBUG)
-    @Message(value = "Unable to load annotation %s", id = Message.NONE)
-    void unableToLoadAnnotation(String annotationClassName);
 }
